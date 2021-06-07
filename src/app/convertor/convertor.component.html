@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <h1 class="title">
+    Indian Rupee to Moldovan Leu <br />
+    1 :
+    {{ this.convertService.indianRupeeToMdl }}
+  </h1>
+
+  <label>
+    Rupee:
+    <input type="number" [formControl]="this.myInput" class="my-input" />
+  </label>
+  <h1>MDL - {{ this.convertService.mdl | number: "1.2-2" }}</h1>
+  <button class="reset-button" (click)="this.reset()">Reset</button>
+</div>

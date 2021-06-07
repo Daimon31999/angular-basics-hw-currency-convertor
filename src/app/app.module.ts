@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ConvertorComponent } from './convertor/convertor.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ConvertorComponent],
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
