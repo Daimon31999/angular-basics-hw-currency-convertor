@@ -5,10 +5,31 @@
     {{ this.convertService.indianRupeeToMdl }}
   </h1>
 
+  <div class="switch">
+    <button
+      class="swap-button active"
+      id="rupeeButton"
+      (click)="this.swap('rupeeButton')"
+    >
+      Rupee
+    </button>
+    <button class="swap-button" id="mdlButton" (click)="this.swap('mdlButton')">
+      MDL
+    </button>
+  </div>
+
   <label>
-    Rupee:
-    <input type="number" [formControl]="this.myInput" class="my-input" />
+    {{ currencyArr[0] }}:
+    <input type="number" [formControl]="this.input" class="my-input" />
   </label>
-  <h1>MDL - {{ this.convertService.mdl | number: "1.2-2" }}</h1>
+  <h1>
+    {{ currencyArr[1] }} -
+    {{
+      (currencyArr[0] === "MDL"
+        ? this.convertService.indianRupee
+        : this.convertService.mdl
+      ) | number: "1.2-2"
+    }}
+  </h1>
   <button class="reset-button" (click)="this.reset()">Reset</button>
 </div>

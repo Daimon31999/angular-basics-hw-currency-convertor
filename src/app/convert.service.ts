@@ -7,12 +7,14 @@ import { Validators } from '@angular/forms';
 })
 export class ConvertService {
   indianRupeeToMdl = 0.24;
+  indianRupee = 0;
   mdl = 0;
 
-  convert(value: number) {
-    this.mdl = this.indianRupeeToMdl * value;
+  convert(value: number, toRupee: boolean) {
+    if (toRupee) this.indianRupee = value / this.indianRupeeToMdl;
+    else this.mdl = this.indianRupeeToMdl * value;
   }
-  onInputChange(value: number) {
-    this.convert(value);
+  onInputChange(value: number, toRupee: boolean) {
+    this.convert(value, toRupee);
   }
 }
